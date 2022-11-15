@@ -13,7 +13,7 @@ justify-content: center;
 align-items: center;
 }
 
-h1{
+h1 {
 font-family: supria-sans,sans-serif;
 font-weight: 800;
 font-style: normal;
@@ -31,3 +31,10 @@ font-size: 50px;
     background-color: aquamarine;
 }
 
+.box:hover {
+    background-color: pink; 
+}
+
+div {
+  border: 2px solid black;
+}
