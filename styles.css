@@ -1,7 +1,33 @@
+/*CSS RESET*/
+* {
+margin:0;
+padding:0;
+}
+
+main {
+display: flex;
+align-content: center;
+flex-direction: column;
+flex-wrap: nowrap;
+justify-content: center;
+align-items: center;
+}
+
+h1{
+font-family: supria-sans,sans-serif;
+font-weight: 800;
+font-style: normal;
+font-size: 50px;
+}
+
+
 .game-board {
-height: 500px;
-width: 500px;
-background-color: aquamarine;
-border: solid black 2px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 500px;
+    height: 500px;
+    border: 2px solid black;
+    margin: 0px auto;
+    background-color: aquamarine;
 }
 
