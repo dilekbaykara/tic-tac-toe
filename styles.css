@@ -25,11 +25,11 @@ font-size: 60px;
 color: #38393a;
 }
 
-h2{
+h2 {
 font-family: elza, sans-serif;
 font-weight: 500;
 font-style: normal;
-font-size: 25px;
+font-size: 20px;
 color: #38393a;
 }
 
@@ -42,10 +42,10 @@ align-items: center;
 }
 
 .game-board {
+min-width: 0;
+min-height: 0;
 display: grid;
 grid-template-columns: repeat(3, 1fr);
-width: 500px;
-height: 500px;
 border: 1px solid #38393a;
 margin: 0px auto;
 background-color: #faf9fa;
@@ -57,7 +57,19 @@ background-color: rgb(221, 253, 228);
 }
 
 .box {
+height:160px;
+width:160px;
 border: 1px solid #38393a;
+display: flex;
+align-content: center;
+flex-wrap: nowrap;
+justify-content: center;
+align-items: center;
+}
+
+img {
+width: 90px;
+color:#38393a;
 }
 
 .message-display {
