@@ -4,6 +4,10 @@ margin:0;
 padding:0;
 }
 
+body {
+background-color: #faf9fa;
+}
+
 main {
 display: flex;
 align-content: center;
@@ -14,27 +18,65 @@ align-items: center;
 }
 
 h1 {
-font-family: supria-sans,sans-serif;
-font-weight: 800;
+font-family: blackest-text, sans-serif;
+font-weight: 700;
 font-style: normal;
-font-size: 50px;
+font-size: 60px;
+color: #38393a;
 }
 
+h2{
+font-family: elza, sans-serif;
+font-weight: 500;
+font-style: normal;
+font-size: 25px;
+color: #38393a;
+}
+
+.top-text {
+border: none;
+margin: 0.5em;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
 
 .game-board {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    width: 500px;
-    height: 500px;
-    border: 2px solid black;
-    margin: 0px auto;
-    background-color: aquamarine;
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+width: 500px;
+height: 500px;
+border: 1px solid #38393a;
+margin: 0px auto;
+background-color: #faf9fa;
+margin-bottom: 2em;
 }
 
 .box:hover {
-    background-color: pink; 
+background-color: rgb(221, 253, 228); 
 }
 
-div {
-  border: 2px solid black;
+.box {
+border: 1px solid #38393a;
+}
+
+.message-display {
+border: none;
+margin-bottom: 1em;
+}
+
+.restart{
+font-family: elza, sans-serif;
+font-weight: 500;
+font-style: normal;
+height: 3.5em;
+width: 12em;
+border-radius: 30px;
+border: 1px solid #38393a;
+background-color: #faf9fa;
+padding: 1px;
+}
+
+.restart:hover{
+background-color: rgb(221, 253, 228);
 }
