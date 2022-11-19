@@ -93,3 +93,18 @@ padding: 1px;
 background-color: rgb(221, 253, 228);
 }
 
+span {
+    font-family: blackest-text, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 100px;
+    color: #38393a;
+    }
+
+p {
+    font-family: blackest-text, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 30px;
+    color: #38393a;
+}
