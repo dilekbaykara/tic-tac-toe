@@ -1,40 +1,63 @@
-//Step 1: Store Array inside Gameboard object
-const gameBoard = (() => {
-const board = ["","","","","","","","",""];
-});
+// User Interface //
+const gameBoard = document.querySelector('game-board');
+const restartGame = document.querySelector('restart');
+const newGame = document.querySelector('new-game');
+const displayMessage = document.querySelector('message-display');
+const gameBox = document.getElementsByClassName('box');
+var x = document.createElementNS("../images/X.svg", "X");
+var O = document.createElementNS(".images/O.svg", "O");
 
-
-const displayController =[]
-
-
-
-//PSEUDOCODE//
-
-//Create game board
+//Store Array inside Gameboard object
+/*gameBoard =  {
+gameBox : ['0','1','2','3','4','5','6','7','8']
+}*/
 
 
 //Create players and their assigned symbols 
 
 const playerOne = (symbol) => {
-    this.symbol = symbol;
-    };
+this.symbol = x;
+
+   /* var img = document.createElement("img");
+    img.src = "./images/X.svg";
+    var src = document.getElementsByClassName("box");
+    src.innerHTML = "./images/X.svg";*/
+};
     
     const playerTwo = (symbol) => {
     this.symbol = symbol;
     };
     
-    //Create function to connect to html/css scoreboard for player 1 and player 2 (computer) to display scores 
-    
-    const scoreBoard 
+//Create function to connect to html/css scoreboard for player 1 and player 2 (computer) to display scores 
+
+/*gameBox[1].addEventListener('click', playerOne);
+gameBox[0].addEventListener('click', function(img) {
+    var img = document.createElement("img");
+    img.src = "./images/X.svg";
+    var src = document.getElementsByClassName("box");
+    src.innerHTML = "./images/X.svg";
+});
+*/
+
+
+gameBox[0].addEventListener('click', function() {
+    var divtest = document.createElement("div");
+    divtest.innerHTML = x;
+    gameBox[0].appendChild(divtest);
+});
+
+
+//Function playerOneRound(X) { 
+// }
     
     //Create game board to be blank at reset
     
     
     
     //Create X and O symbols to populate on game board when the assigned player clicks on the divs
-    
-    
-    
+
+
+
     //Else 
     
     
@@ -57,7 +80,7 @@ const playerOne = (symbol) => {
     //Create function that restarts game all over again
     //Create button event listener that restarts game 
     
-    PlayRound computer AI 
+    //PlayRound computer AI 
     
     //create play round feature that is triggered for player 2 (computer AI) once player 1 clicks on a div 
     //If player one clicks on a div then player two will select div to the bottom
