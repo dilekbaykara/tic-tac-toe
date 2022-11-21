@@ -42,8 +42,6 @@ align-items: center;
 }
 
 .game-board {
-min-width: 0;
-min-height: 0;
 display: grid;
 grid-template-columns: repeat(3, 1fr);
 border: 1px solid #38393a;
@@ -52,11 +50,11 @@ background-color: #faf9fa;
 margin-bottom: 2em;
 }
 
-.box:hover {
+.cell:hover {
 background-color: rgb(221, 253, 228); 
 }
 
-.box {
+.cell {
 /*STYLING X'S AND O'S*/    
 font-family: blackest-text, sans-serif;
 font-weight: 700;
@@ -64,8 +62,8 @@ font-style: normal;
 font-size: 100px;
 color: #38393a;
 /*STYLING INDIVUAL CELLS*/
-height:160px;
-width:160px;
+min-height: 170px;
+min-width: 170px;
 border: 1px solid #38393a;
 display: flex;
 align-content: center;
