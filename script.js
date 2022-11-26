@@ -73,6 +73,7 @@ const gameDisplay = document.getElementById("game-board");
 function clearGame(){
 for(let i =0;i < gameDisplay.children.length;i++) {
     gameDisplay.children[i].innerHTML = '';}
+return boardArray.length = 0;
 }
 // Define reset button function first
 function resetGame(){
