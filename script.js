@@ -62,16 +62,30 @@ const switchPlayer = () => {
   });
 })();
 
+/*function clearBox(){
+    const divCells = document.getElementById("cells");
+    while (divCells.firstChild)
+    divCells.removeChild(divCells.firstChild);
+    
+}*/
+const gameDisplay = document.getElementById("game-board");
+
+function clearGame(){
+for(let i =0;i < gameDisplay.children.length;i++) {
+    gameDisplay.children[i].innerHTML = '';}
+}
 // Define reset button function first
-function resetGame(prunes,cheese){
+function resetGame(){
 
 // Define result, reset the board
 //if the board array index is equal to a character
 if(boardArray.includes('X','O')){
-    console.log('prunes');
+    { return clearGame();
+        //boardArray.length = 0;
+      }
 }
 else
-  {console.log('cheese');}
+  {console.log('foo');}
 //and if the cells textContent is equal to a character
 //return the result, which is the reset board function 
 }
