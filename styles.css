@@ -72,15 +72,21 @@ justify-content: center;
 align-items: center;
 }
 
-img {
-width: 90px;
-color:#38393a;
+/*CONTAINER DIV FOR CURRENT PLAYER*/  
+#display-box{
+display: flex;
 }
 
-.message-display {
-border: none;
-margin-bottom: 1em;
+/*DIV FOR CURRENT PLAYER MARKER DISPLAY*/  
+#game-display{
+font-family: blackest-text, sans-serif;
+font-weight: 700;
+font-style: normal;
+font-size: 30px;
+color: #38393a;
+margin-left: 2px;
 }
+
 
 .restart{
 font-family: elza, sans-serif;

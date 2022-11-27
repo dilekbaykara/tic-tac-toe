@@ -1,4 +1,4 @@
-// player factory
+//
 const playerFactory = () => {
     const playTurn = (event, currentPlayer) => {
       const id = boardObject.cells.indexOf(event.target);
@@ -38,11 +38,27 @@ const displayController = (() => {
 const playerOne = 'X';
 const playerTwo = 'O';
 const gameBoard = document.querySelector(".game-board");
+//DOM Element display for current player turn
+let displayMessage = document.getElementById("game-display");
 let currentPlayer = playerOne;
 
 const switchPlayer = () => {
     currentPlayer = currentPlayer === playerOne ? playerTwo : playerOne;
   }
+
+  const showMessage = () => {
+    //display current player inside of display message div
+   if (currentPlayer === playerOne)
+   {
+    displayMessage.innerHTML = '  O';
+}
+   if (currentPlayer === playerTwo)
+   {
+    displayMessage.innerHTML = '  X';
+}
+
+};
+
 
   gameBoard.addEventListener("click", (event) => {
     if (event.target.classList.contains("cell")) {
@@ -51,6 +67,7 @@ const switchPlayer = () => {
         const indexOfClickedCell = Array.prototype.indexOf.call(document.querySelectorAll('.cell'), event.target);
         boardArray[indexOfClickedCell] = currentPlayer;
         switchPlayer();
+        showMessage();
         //const id = boardObject.cells.indexOf(event.target);
         //boardObject.boardArray[id] = currentPlayer;
         //boardObject.render();
@@ -62,18 +79,22 @@ const switchPlayer = () => {
   });
 })();
 
-/*function clearBox(){
-    const divCells = document.getElementById("cells");
-    while (divCells.firstChild)
-    divCells.removeChild(divCells.firstChild);
-    
-}*/
+
+// Defining DOM element of Tic-Tac-Toe grid
 const gameDisplay = document.getElementById("game-board");
 
+
+//DOM Element display for current player turn
+//const displayMessage = document.getElementById("game-display");
+
+let displayMessage = document.getElementById("game-display");
+
+// Function to clear DOM elements of gameDisplay board and empty boardArray inputs
 function clearGame(){
 for(let i =0;i < gameDisplay.children.length;i++) {
     gameDisplay.children[i].innerHTML = '';}
-return boardArray.length = 0;
+    return (boardArray.length = 0); 
+    
 }
 // Define reset button function first
 function resetGame(){
@@ -81,12 +102,12 @@ function resetGame(){
 // Define result, reset the board
 //if the board array index is equal to a character
 if(boardArray.includes('X','O')){
+    displayMessage.innerHTML='';
     { return clearGame();
-        //boardArray.length = 0;
       }
 }
 else
-  {console.log('foo');}
+  {displayMessage.innerHTML='';}
 //and if the cells textContent is equal to a character
 //return the result, which is the reset board function 
 }
@@ -94,4 +115,5 @@ else
 const resetButton = document.querySelector(".restart");
 resetButton.addEventListener("click", (event) => {
     resetGame(event);
+   
 });
