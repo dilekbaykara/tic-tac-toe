@@ -42,20 +42,29 @@ const gameBoard = document.querySelector(".game-board");
 let displayMessage = document.getElementById("game-display");
 let currentPlayer = playerOne;
 
+const nextPlayer = (currentPlayer) => {
+  return currentPlayer === playerOne ? playerTwo : playerOne;
+}
 const switchPlayer = () => {
-    currentPlayer = currentPlayer === playerOne ? playerTwo : playerOne;
+    currentPlayer = nextPlayer(currentPlayer);
   }
 
+
   const showMessage = () => {
+    const next = nextPlayer(currentPlayer);
     //display current player inside of display message div
-   if (currentPlayer === playerOne)
+   if (next === playerOne)
    {
-    displayMessage.innerHTML = '  O';
+    displayMessage.innerHTML = 'Current Player: X';
 }
-   if (currentPlayer === playerTwo)
+   if (next === playerTwo)
    {
-    displayMessage.innerHTML = '  X';
+    displayMessage.innerHTML = 'Current Player: O';
 }
+if (hasWon(playerOne))
+  displayMessage.innerHTML='Player One Wins!';
+else if (hasWon(playerTwo))
+  displayMessage.innerHTML='Player Two Wins!' ;
 
 };
 
@@ -66,8 +75,12 @@ const switchPlayer = () => {
         event.target.textContent = currentPlayer;
         const indexOfClickedCell = Array.prototype.indexOf.call(document.querySelectorAll('.cell'), event.target);
         boardArray[indexOfClickedCell] = currentPlayer;
-        switchPlayer();
+        if (hasWon(currentPlayer)) {
+          
+        }
         showMessage();
+        switchPlayer();
+        
         //const id = boardObject.cells.indexOf(event.target);
         //boardObject.boardArray[id] = currentPlayer;
         //boardObject.render();
@@ -117,3 +130,52 @@ resetButton.addEventListener("click", (event) => {
     resetGame(event);
    
 });
+
+//Define winning player conditions
+const winCondition = [     
+[0, 1, 2],
+[3, 4, 5],
+[6, 7, 8],
+[0, 3, 6],
+[1, 4, 7],
+[2, 5, 8],
+[0, 4, 8],
+[2, 4, 6],
+];
+
+// takes current player (x or o) and determines if they have won (returns true or false)
+function hasWon(currentPlayer) {
+  let winner = false;
+  for (const condition of winCondition) {
+    const firstIndex = condition[0];
+    const secondIndex = condition[1];
+    const thirdIndex = condition[2];
+    
+    const firstValue = boardArray[firstIndex];
+    const secondValue = boardArray[secondIndex];
+    const thirdValue = boardArray[thirdIndex];
+    
+    if (currentPlayer === firstValue && currentPlayer === secondValue && currentPlayer === thirdValue) {
+      winner = true;
+    }
+  }
+  
+  return winner;
+}
+
+// Define winner of round function
+function returnRoundWinner(){
+if (playerOneWin)
+return displayRoundWinner();
+if (playerTwoWin)
+return
+displayRoundWinner();
+}
+
+//DOM function to display winner of round once conditions are met
+function displayRoundWinner(){
+if (playerOneWin)
+return displayMessage.innerHTML='Player One Wins!';
+if (playerTwoWin)
+return displayMessage.innerHTML='Player Two Wins!' ;
+}
