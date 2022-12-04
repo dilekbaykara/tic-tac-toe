@@ -133,3 +133,35 @@ backdrop-filter: blur(10px);
 .hidden {
 display: none;
 }
+
+
+/* FOOTER */
+
+footer {
+    width: 500px;
+    align-self: center;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    flex-direction: row;
+    padding-top: 15px;
+    display: flex;
+    margin: 5px;
+    font-family: elza, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    color:  #172A3A;
+
+
+  }
+  
+  .fa-github {
+    color:  #172A3A;
+    font-size: 24px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .fa-github:hover {
+  
+    transform: rotate(360deg) scale(1.2);
+  }
