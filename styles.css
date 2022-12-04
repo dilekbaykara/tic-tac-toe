@@ -120,3 +120,16 @@ p {
     color: #38393a;
 }
 
+#win-message {
+font-family: blackest-text, sans-serif;
+font-weight: 700;
+font-style: normal;
+font-size: 100px;
+color: #38393a;
+position: absolute;
+backdrop-filter: blur(10px);
+}
+
+.hidden {
+display: none;
+}
