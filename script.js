@@ -1,4 +1,3 @@
-//
 let winMessage = document.getElementById("win-message");
 
 const playerFactory = () => {
